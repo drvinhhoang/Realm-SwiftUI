@@ -6,18 +6,20 @@
 //
 
 import SwiftUI
-
+import RealmSwift
 
 struct IngredientFormView: View {
   @Environment(\.dismiss) var dismiss
+    
+  @Environment(\.realm) var realm
 
-  @ObservedObject var ingredient: Ingredient
+  @ObservedRealmObject var ingredient: Ingredient
 
   let quantityOptions = [1, 2, 3, 4, 5]
+  let colorOptions = ColorOptions.allCases
 
   var isUpdating: Bool {
-    // TODO: Mark as updating
-    return false
+      ingredient.realm != nil
   }
 
   var body: some View {
@@ -29,7 +31,11 @@ struct IngredientFormView: View {
             Text("\(option)")
           }
         }
-        // TODO: Add Color Picker
+        Picker("Color", selection: $ingredient.colorOption) {
+          ForEach(colorOptions, id: \.self) { option in
+              Text(option.title)
+          }
+        }
         Section("Notes📝") {
           TextEditor(text: $ingredient.notes)
         }
@@ -55,7 +61,9 @@ struct IngredientFormView: View {
 // MARK: - Actions
 extension IngredientFormView {
   func save() {
-    // TODO: Save ingredient
+      try? realm.write({
+          realm.add(ingredient)
+      })
     dismiss()
   }
 }

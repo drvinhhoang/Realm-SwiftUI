@@ -11,7 +11,8 @@ import SwiftUI
 struct Realm_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            IngredientListView()
+            ContentView()
+                .environment(\.realmConfiguration, RealmMigrator.configuration)
         }
     }
 }

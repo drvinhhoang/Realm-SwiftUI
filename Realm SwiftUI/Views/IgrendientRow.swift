@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct IngredientRow: View {
   @State private var ingredientFormIsPresented = false
-  let ingredient: Ingredient
+  @ObservedRealmObject var ingredient: Ingredient
 
   var buttonImage: String {
     ingredient.bought ? "circle.inset.filled" : "circle"
@@ -39,6 +40,7 @@ struct IngredientRow: View {
         Image(systemName: buttonImage)
           .resizable()
           .frame(width: 24, height: 24)
+          .foregroundColor(ingredient.color)
       }
     }
   }
@@ -51,7 +53,7 @@ extension IngredientRow {
   }
 
   func toggleBought() {
-    // TODO: Toggle bought
+      $ingredient.bought.wrappedValue.toggle()
   }
 }
 

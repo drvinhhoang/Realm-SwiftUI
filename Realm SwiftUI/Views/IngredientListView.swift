@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct IngredientListView: View {
   @State private var ingredientFormIsPresented = false
 
-  @State var ingredients: [Ingredient] = []
-  @State var boughtIngredients: [Ingredient] = []
+  @ObservedResults(Ingredient.self,
+                     where: { $0.bought == false }) var ingredients
+  @ObservedResults(Ingredient.self,
+                     where: { $0.bought == true }) var boughtIngredients
 
   @ViewBuilder var newIngredientButton: some View {
     Button(action: openNewIngredient) {
@@ -34,6 +37,7 @@ struct IngredientListView: View {
         ForEach(ingredients) { ingredient in
           IngredientRow(ingredient: ingredient)
         }
+        .onDelete(perform: $ingredients.remove )
         newIngredientButton
       }
       Section {
@@ -45,6 +49,8 @@ struct IngredientListView: View {
         ForEach(boughtIngredients) { ingredient in
           IngredientRow(ingredient: ingredient)
         }
+        .onDelete(perform: $boughtIngredients.remove )
+
       } header: {
         Text("Bought")
       } footer: {
