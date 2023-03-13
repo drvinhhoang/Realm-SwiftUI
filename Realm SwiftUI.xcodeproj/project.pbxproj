@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		5A14100F29BF577100966397 /* Realm_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14100E29BF577100966397 /* Realm_SwiftUIApp.swift */; };
-		5A14101129BF577100966397 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14101029BF577100966397 /* ContentView.swift */; };
 		5A14101329BF577200966397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A14101229BF577200966397 /* Assets.xcassets */; };
 		5A14101629BF577200966397 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A14101529BF577200966397 /* Preview Assets.xcassets */; };
+		5A14101E29BF57D800966397 /* IngredientFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14101D29BF57D800966397 /* IngredientFormView.swift */; };
+		5A14102029BF585600966397 /* IgrendientRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14101F29BF585600966397 /* IgrendientRow.swift */; };
+		5A14102229BF586C00966397 /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14102129BF586C00966397 /* IngredientListView.swift */; };
+		5A14102529BF588300966397 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14102429BF588300966397 /* Ingredient.swift */; };
+		5A14102729BF589B00966397 /* IngredientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14102629BF589B00966397 /* IngredientMock.swift */; };
+		5A14102A29BF619900966397 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5A14102929BF619900966397 /* Realm */; };
+		5A14102C29BF619900966397 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A14102B29BF619900966397 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A14100B29BF577100966397 /* Realm SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A14100E29BF577100966397 /* Realm_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm_SwiftUIApp.swift; sourceTree = "<group>"; };
-		5A14101029BF577100966397 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A14101229BF577200966397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A14101529BF577200966397 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A14101D29BF57D800966397 /* IngredientFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientFormView.swift; sourceTree = "<group>"; };
+		5A14101F29BF585600966397 /* IgrendientRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgrendientRow.swift; sourceTree = "<group>"; };
+		5A14102129BF586C00966397 /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
+		5A14102429BF588300966397 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		5A14102629BF589B00966397 /* IngredientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A14102C29BF619900966397 /* RealmSwift in Frameworks */,
+				5A14102A29BF619900966397 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				5A14100E29BF577100966397 /* Realm_SwiftUIApp.swift */,
-				5A14101029BF577100966397 /* ContentView.swift */,
+				5A14101C29BF57C000966397 /* Views */,
+				5A14102329BF587600966397 /* Models */,
 				5A14101229BF577200966397 /* Assets.xcassets */,
 				5A14101429BF577200966397 /* Preview Content */,
 			);
@@ -65,6 +78,25 @@
 				5A14101529BF577200966397 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A14101C29BF57C000966397 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A14101D29BF57D800966397 /* IngredientFormView.swift */,
+				5A14101F29BF585600966397 /* IgrendientRow.swift */,
+				5A14102129BF586C00966397 /* IngredientListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A14102329BF587600966397 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A14102429BF588300966397 /* Ingredient.swift */,
+				5A14102629BF589B00966397 /* IngredientMock.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +115,10 @@
 			dependencies = (
 			);
 			name = "Realm SwiftUI";
+			packageProductDependencies = (
+				5A14102929BF619900966397 /* Realm */,
+				5A14102B29BF619900966397 /* RealmSwift */,
+			);
 			productName = "Realm SwiftUI";
 			productReference = 5A14100B29BF577100966397 /* Realm SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 5A14100229BF577100966397;
+			packageReferences = (
+				5A14102829BF619900966397 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 5A14100C29BF577100966397 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A14101129BF577100966397 /* ContentView.swift in Sources */,
+				5A14102229BF586C00966397 /* IngredientListView.swift in Sources */,
+				5A14102729BF589B00966397 /* IngredientMock.swift in Sources */,
+				5A14102529BF588300966397 /* Ingredient.swift in Sources */,
+				5A14101E29BF57D800966397 /* IngredientFormView.swift in Sources */,
 				5A14100F29BF577100966397 /* Realm_SwiftUIApp.swift in Sources */,
+				5A14102029BF585600966397 /* IgrendientRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +382,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A14102829BF619900966397 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.37.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A14102929BF619900966397 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A14102829BF619900966397 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		5A14102B29BF619900966397 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A14102829BF619900966397 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A14100329BF577100966397 /* Project object */;
 }
